@@ -1,0 +1,34 @@
+{
+	"name": "React Example",
+	"image": "ubuntu:22.04",
+	"features": {
+		"ghcr.io/devcontainers/features/common-utils:1": {
+			"installZsh": "true",
+			"username": "codeany",
+			"uid": "1000",
+			"gid": "1000",
+			"upgradePackages": "false"
+		},
+		"ghcr.io/devcontainers/features/git:1": {
+            "version": "latest",
+            "ppa": "false"
+        },
+        "ghcr.io/devcontainers/features/node:1.1.1": {
+			"version": "16.13.0"
+		}
+	},
+
+	// Configure tool-specific properties.
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
+				"dbaeumer.vscode-eslint"
+			]
+		}
+	},
+
+	"postCreateCommand": "npm i -g yarn typescript node-gyp && yarn",
+	"remoteUser": "codeany"
+}
